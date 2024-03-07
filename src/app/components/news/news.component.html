@@ -1,0 +1,10 @@
+@if(newsDetail){
+<mat-card>
+    <h2>{{newsDetail.title}}</h2>
+    <mat-divider></mat-divider>
+    <div class="urlAndDate">
+        <p>{{getDomainFromUrl(newsDetail.url)}}</p>
+        <p>{{getData(newsDetail.time)}}</p>
+    </div>
+</mat-card>
+}

@@ -1,0 +1,7 @@
+<h2>Lista news</h2>
+@for(news of newsToVisualize; track $index){
+    <app-news [newsId]="news"></app-news>
+}
+<button (click)="loadMore()">
+    <mat-icon>refresh</mat-icon>Load more
+</button>

@@ -1,0 +1,21 @@
+mat-card{
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+mat-card-title{
+    padding: 0 10px;
+}
+h2{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.urlAndDate{
+    padding: 0 10px;
+    margin: 0;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
