@@ -25,7 +25,7 @@ import { MatDividerModule } from '@angular/material/divider';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Hacker News Viewer';
+  title = 'HackerNewsViewerAngular';
   numberOfNews: number = 10;
   newsList: number[] = [];
   newsToVisualize: number[] = [];
@@ -44,7 +44,9 @@ export class AppComponent {
 
   ngOnInit(): void { this.getNewsList(); }
 
-  getNewsList(): void { this.hackerNewsApiService.getNewsList().subscribe(this.listObserver); }
+  getNewsList(): void {
+    this.hackerNewsApiService.getNewsList().subscribe(this.listObserver);
+  }
 
   loadMore(): void {
     for (let i = 0; i < this.numberOfNews; i++) {

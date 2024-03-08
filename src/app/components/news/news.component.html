@@ -1,14 +1,13 @@
 @if(newsDetail){
-<mat-card (click)="goToNews(newsDetail.url)">
+<mat-card (click)="goToNews()">
     <h2>{{newsDetail.title}}</h2>
-    <mat-divider></mat-divider>
     <div class="urlAndDate">
         @if(newsDetail.url){
-        <p (click)="goToNewsMainPage(newsDetail.url, $event)">{{getDomainFromUrl(newsDetail.url)}}</p>
+        <p (click)="goToNewsMainPage($event)">{{newsDetail.domain}}</p>
         }@else{
         <p>- - -</p>
         }
-        <p>{{getData(newsDetail.time)}}</p>
+        <p>{{newsDetail.date}}</p>
     </div>
 </mat-card>
 }

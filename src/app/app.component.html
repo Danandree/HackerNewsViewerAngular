@@ -1,6 +1,6 @@
 <div class="mainAppContainer">
   <mat-card>
-    <h1>{{title}}</h1>
+    <h1>Hacker News Viewer</h1>
     <mat-divider></mat-divider>
     <h2>Lista news</h2>
   </mat-card>
@@ -8,7 +8,7 @@
   <app-news [newsId]="news"></app-news>
   }
   <div class="loadMoreButton">
-    <button mat-raised-button (click)="loadMore()">
+    <button mat-raised-button class="yellow" (click)="loadMore()">
       <mat-icon>refresh</mat-icon>Load more
     </button>
   </div>
