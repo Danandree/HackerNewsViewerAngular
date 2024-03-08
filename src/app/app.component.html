@@ -1,6 +1,15 @@
 <div class="mainAppContainer">
   <mat-card>
-    <h1>Hacker News Viewer</h1>
+    <h1>{{title}}</h1>
+    <mat-divider></mat-divider>
+    <h2>Lista news</h2>
   </mat-card>
-  <router-outlet />
+  @for(news of newsToVisualize; track $index){
+  <app-news [newsId]="news"></app-news>
+  }
+  <div class="loadMoreButton">
+    <button mat-raised-button (click)="loadMore()">
+      <mat-icon>refresh</mat-icon>Load more
+    </button>
+  </div>
 </div>

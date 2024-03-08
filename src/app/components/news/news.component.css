@@ -2,6 +2,8 @@ mat-card{
     width: 100%;
     margin: auto;
     margin-top: 10px;
+    background-color: rgb(250, 250, 181);
+    cursor: pointer;
 }
 mat-card-title{
     padding: 0 10px;

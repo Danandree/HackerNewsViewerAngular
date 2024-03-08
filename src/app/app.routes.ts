@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { NewsListComponent } from './components/news-list/news-list.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-    { path: '**', component: NewsListComponent },
+    { path: '', component: AppComponent },
+    { path: '**', redirectTo: '/' },
 ];
