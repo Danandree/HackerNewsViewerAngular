@@ -25,7 +25,7 @@ export class NewsListComponent {
   newsToVisualize: number[] = [];
   listObserver: Observer<number[]> = {
     next: (data: number[]) => {
-      this.newsList = data; console.log(data);
+      this.newsList = data;
       for (let i = 0; i < this.numberOfNews; i++) {
         this.newsToVisualize.push(this.newsList.shift()!);
       }
@@ -36,15 +36,18 @@ export class NewsListComponent {
 
   constructor(private hackerNewsApiService: HackerNewsApiService) { }
 
-  ngOnInit(): void {
-    this.hackerNewsApiService.getNewsList().subscribe(this.listObserver);
-  }
+  ngOnInit(): void { this.getNewsList(); }
+
+  getNewsList(): void { this.hackerNewsApiService.getNewsList().subscribe(this.listObserver); }
 
   loadMore(): void {
     for (let i = 0; i < this.numberOfNews; i++) {
       let newsId = this.newsList.shift();
-      console.log(newsId);
       if (newsId) { this.newsToVisualize.push(newsId); }
+      else {
+        this.getNewsList();
+        break;
+      }
     }
   }
 }
