@@ -19,7 +19,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class NewsComponent {
   @Input() newsId!: number;
-  newsDetail = new NEWS();
+  newsDetail!: NEWS;
   newsObserver: Observer<NEWS> = {
     next: (data: NEWS) => {
       this.newsDetail = data;

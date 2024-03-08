@@ -23,7 +23,8 @@ export class NEWS implements HackerNewsObject {
     title = '';
     time = 0;
     type = '';
-    url = '- - -';
+    url?: string;
     date?: string;
     domain?: string;
+
 }

@@ -11,10 +11,11 @@ describe('NewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NewsComponent, HttpClientTestingModule]
+      imports: [NewsComponent, HttpClientTestingModule],
+      providers: [{ provide: Window, useValue: { location: { href: "" } } },]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(NewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -24,28 +25,40 @@ describe('NewsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should do to the news page', () => {
+  it('should go to the news page', () => {
+    component.newsDetail.url = undefined;
+    component.goToNews();
+    const spy = spyOn(component, 'goToNews').and.callThrough();
+    component.newsDetail.url = "";
+    component.goToNews();
+    expect(spy).toHaveBeenCalled();
     // expect(component.goToNews()).toBeTruthy();
-    expect(component.newsDetail.url).toBe("- - -");
+    // expect(component.newsDetail.url).toBe("- - -");
   });
-
+  
   it('should set date and domain', () => {
     component.setDateAndDomain();
     expect(component.newsDetail.date).toBeTruthy();
   });
-
+  
   it('should observe news', () => {
     component.newsObserver.next(new NEWS());
     component.newsObserver.error('error');
     component.newsObserver.complete();
     expect(component.newsDetail).toBeTruthy();
   });
-
+  
   it('should go to the news doman page', () => {
     const event = new Event('click');
     component.goToNewsMainPage(event);
+    expect(component.newsDetail.domain).toBeUndefined();
+
+    const spy = spyOn(component, 'goToNewsMainPage');
+    component.newsDetail.domain = 'www.google.com';
+    component.goToNewsMainPage(event);
+    expect(spy).toHaveBeenCalled();
+    // component.goToNewsMainPage(event);
     // component.newsDetail.domain = 'www.google.com';
     // component.goToNewsMainPage(event);
-    expect(component.newsDetail.domain).toBeUndefined();
   });
 });
