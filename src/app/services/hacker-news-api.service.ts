@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { HackerNewsObject, NEWS } from '../interfaces/hacker-news-object';
+import { NEWS } from '../interfaces/hacker-news-object';
 
 @Injectable({
   providedIn: 'root'
