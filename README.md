@@ -14,11 +14,12 @@ Cliccando sulla scheda della notizia si accede al sito della stessa.<br>
 Per provare l'applicazione bisogna aver installati sul proprio sistema:
  - node.js
  - npm
-Una volta instllati node.js e npm:
- - npm install -g @angular/cli (Intslla l'Angular CLI)
+
+Una volta installati node.js e npm:
+ - npm install -g @angular/cli (Installa l'Angular CLI)
  - npm install (Installa le dipendenze)
  - ng serve (Avvia l'applicazione in locale)
 
  > [!NOTE]
  > é possibile provare l'applicazione senza scaricare nulla sul proprio sistema al seguente link: 
- > [Haker News Viewer](hacker-news-viewer-angul-979f2.web.app)
+ > [Haker News Viewer Angular](hacker-news-viewer-angul-979f2.web.app)
