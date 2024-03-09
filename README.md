@@ -21,5 +21,5 @@ Una volta installati node.js e npm:
  - ng serve (Avvia l'applicazione in locale)
 
  > [!NOTE]
- > é possibile provare l'applicazione senza scaricare nulla sul proprio sistema al seguente link: 
+ > É possibile provare l'applicazione senza scaricare nulla sul proprio sistema al seguente link: 
  > [Haker News Viewer Angular](hacker-news-viewer-angul-979f2.web.app)
