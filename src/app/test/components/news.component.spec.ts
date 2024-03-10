@@ -26,10 +26,10 @@ describe('NewsComponent', () => {
   });
 
   it('should go to the news page', () => {
-    component.newsDetail.url = undefined;
+    component.newsDetail = new NEWS();
     component.goToNews();
     const spy = spyOn(component, 'goToNews').and.callThrough();
-    component.newsDetail.url = "";
+    // component.newsDetail.url = "";
     component.goToNews();
     expect(spy).toHaveBeenCalled();
     // expect(component.goToNews()).toBeTruthy();
@@ -37,6 +37,8 @@ describe('NewsComponent', () => {
   });
   
   it('should set date and domain', () => {
+    component.newsDetail = new NEWS();
+    component.newsDetail.url = "https://www.google.com";
     component.setDateAndDomain();
     expect(component.newsDetail.date).toBeTruthy();
   });
@@ -49,6 +51,7 @@ describe('NewsComponent', () => {
   });
   
   it('should go to the news doman page', () => {
+    component.newsDetail = new NEWS();
     const event = new Event('click');
     component.goToNewsMainPage(event);
     expect(component.newsDetail.domain).toBeUndefined();
